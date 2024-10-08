@@ -1,0 +1,6 @@
+#!/bin/bash
+
+valgrind --quiet --leak-check=full --show-leak-kinds=all ./push_swap "$@"
+echo "last status code: $?"
+echo "lines: $(./push_swap "$@" | wc -l)"
+echo "checker: $(./push_swap "$@" | ./checker_linux "$@")"
